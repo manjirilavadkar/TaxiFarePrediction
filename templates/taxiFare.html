@@ -1,0 +1,62 @@
+<!Doctype Html>
+<html>
+<head>
+	<title>Taxi Fare PRediction</title>
+	<style>
+		h1,h2,form{
+
+			margin-left: 600px;
+			margin-top: 50px;
+		}
+		table{
+
+			height:400px;
+			width:400px;
+		}
+	</style>
+</head>
+<body>
+	<H1>Taxi Fare Prediction</H1>
+	<form action="/predict" method="POST">
+		<table>
+			<tr>
+				<td><label>Trip Duration in minutes:</label></td>
+				<td><input type="number" name="duration"></td>
+			</tr>
+			<tr>
+				<td><label>Distance Travelled in KM:</label></td>
+				<td><input type="text" name="distance"></td>
+			</tr>
+			<tr>
+				<td><label>No. of Passenger:</label></td>
+				<td><input type="text" name="passenger"></td>
+			</tr>
+			<tr>
+				<td><label>Fare:</label></td>
+				<td><input type="text" name="fare"></td>
+			</tr>
+			<tr>
+				<td><label>Tip:</label></td>
+				<td><input type="text" name="tip"></td>
+			</tr>
+			<tr>
+				<td><label>Extra Charges:</label></td>
+				<td><input type="text" name="charges"></td>
+			</tr>
+			<tr>
+				<td><label>Surge Applied:</label></td>
+				<td><select style="width:170px;" name="surge">
+					<option>No</option>
+					<option>Yes</option>
+					</select>
+				</td>
+			</tr>
+			<tr style="text-align: right;">
+				<td ><input type="submit" value="Predict" style="height: 30px;"></td>
+			</tr>
+		</table>
+
+	</form>
+	<h2>Prediction:  {{predictions}}</h2>
+</body>
+</html>
